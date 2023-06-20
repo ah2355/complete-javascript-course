@@ -36,3 +36,57 @@ else
 {
     console.log("It's a draw");
 }
+
+const day = "tuesday";
+
+switch(day){
+
+    case "monday":
+        console.log("Do chores");
+        break;
+    case "tuesday" :
+        console.log("Read books");
+        console.log("Do coding exercise");
+        break;
+    case "wednesday":
+    case "thursday":
+        console.log("Help Dad in gardening");
+        console.log("Check emails");
+        break;
+    case "friday":
+        console.log("Go to Jummah");
+        break;
+    case "saturday":
+    case"sunday":
+        console.log("Enjoy the weekend");
+        break;
+    default:
+        console.log("Invalid day");
+
+}
+// The if-else statement version of the switch statement code above
+// if (day === "monday"){
+//     console.log("Do chores");
+// }
+// else if (day === "tuesday")
+// {
+//     console.log("Read books");
+//     console.log("Do coding exercise");
+// }
+// else if(day === "wednesday" || day === "thursday")
+// {
+//     console.log("Help Dad in gardening");
+//     console.log("Check emails");
+// }
+// else if(day === "friday")
+// {
+//     console.log("Go to Jummah");
+// }
+// else if(day === "saturday" || day ==="sunday")
+// {
+//     console.log("Enjoy the day");
+// }
+// else
+// {
+//     console.log("Not a valid day");
+// }
