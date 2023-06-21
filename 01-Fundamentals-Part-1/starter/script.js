@@ -95,7 +95,7 @@ const age = 18;
 
 age >=18 ? console.log("You may pass") :
 console.log("Not old enough!! Need a guardian/parent to access");
-
+//Challenge 4
 const bill = 300;
 const tip = bill >=50 || bill <=300 ? bill * .15 : bill * .20;
 console.log(`The bill was ${bill}, the tip was ${tip}, and the total value is ${bill + tip} `);
