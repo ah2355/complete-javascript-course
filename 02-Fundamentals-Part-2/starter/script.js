@@ -66,11 +66,11 @@ const scoreKoalas2 = calcAverage(23,34
 
 
 function checkWinner(avgDolphins,avgKoalas){
-    if(avgDolphins>avgKoalas)
+    if(avgDolphins>= 2 * avgKoalas)
     {
         console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
     }
-    else if (avgKoalas>avgDolphins)
+    else if (avgKoalas>= 2* avgDolphins)
     {
         console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`)
     }
@@ -83,3 +83,40 @@ function checkWinner(avgDolphins,avgKoalas){
 checkWinner(scoreDolphins,scoreKoalas);
 checkWinner(scoreDolphins2,scoreKoalas2);
 
+//Intro to Arrays
+
+const friends = ['Michael', 'Steven', 'Peter'];
+
+console.log(friends);
+
+/**
+ * OR
+ * const years = new Array(1991,1998,2010,2023);
+ */
+console.log(friends.length);
+
+const firstName = 'Afif';
+const afif = [firstName, 'Haque', 2023 - 2004, friends];
+
+console.log(afif);
+//Add elements at the end of the array - .push()
+friends.push('Jay');
+console.log(friends);
+//Add elements at the first place of the array - .unshift()
+friends.unshift('John');
+console.log(friends);
+//Remove the last elements - .pop()
+const popped = friends.pop();
+console.log(`The popped element from the friends array was ${popped}`);
+console.log(friends);
+//Remove the first element in the array - .shift()
+friends.shift()
+console.log(friends);
+
+console.log(friends.indexOf('Steven'));
+
+//Only works for ES6 version of JS
+//Returns a boolean response wether a element in the array is present or not- .includes()
+console.log(friends.includes('Steven'));
+
+//Coding challenge 2
