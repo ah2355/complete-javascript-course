@@ -120,3 +120,15 @@ console.log(friends.indexOf('Steven'));
 console.log(friends.includes('Steven'));
 
 //Coding challenge 2
+const calcTip = (bill) => {
+   return bill >=50 && bill <=300 ? bill * .15 : bill * .20;
+}
+
+const bills = [125,555,44];
+console.log(calcTip(bills[1]));
+const tips = [calcTip(bills[0]),calcTip(bills[1]),calcTip(bills[2])];
+
+const total = [(bills[0] + tips[0]), (bills[1] + tips[1]), (bills[2] + tips[2])];
+
+console.log("The total bills are " +   total);
+
