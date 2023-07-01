@@ -139,9 +139,28 @@ const me = {
     birthYear: 2004,
     job: "Student",
     friends: ["Ifte", "Alvin", "Ansh", "Kevin"],
-    calcAge: function(birthYear){
-        return 2023 - birthYear;
-    } 
+    hasDriversLicense: false,
+    // calcAge: function(birthYear){
+    //     return 2023 - birthYear;
+    // } 
+
+    // calcAge: function ()
+    // {
+    //     // console.log(this.birthYear);
+    //     return 2023 - this.birthYear;
+    // }
+
+    calcAge: function ()
+    {
+        this.age = 2023 - this.birthYear;
+        return this.age;
+    },
+
+
+    getSummary : function()
+    {
+        return (`${this.firstName} is a ${this.calcAge()} year old  ${this.job}, and he ${this.hasDriversLicense ? " has a" : "doesn't have a"} driver's license `);
+    }
 };
 console.log(me);
 //dot notation
@@ -167,9 +186,43 @@ else{
 //assigning new elements to the 
 me.location = "US";
 me["twitter"] = "@afif_polo";
-me.driverLicense = false;
 console.log(me);
 
 console.log(me.firstName + " has " + me.friends.length + " friends, and his best friend is called " + me.friends[0]);
 
-console.log(me.calcAge(2004));
+console.log(me.calcAge());
+// console.log(me["calcAge"](2004))
+console.log(me.age);
+
+console.log(me.getSummary());
+
+//Challenge 3
+const mark = {
+    fullName: "Mark Miller",
+    mass: 78,
+    height: 1.69,
+    calcBMI: function()
+    {
+        this.bmi =  this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+};
+const john = {
+    fullName: "John Smith",
+    mass: 92,
+    height: 1.95,
+    calcBMI: function()
+    {
+        this.bmi =  this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+};
+
+mark.calcBMI();
+john.calcBMI();
+ 
+if (mark.bmi > john.bmi) {
+  console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`)
+} else if (john.bmi > mark.bmi) {
+  console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`)
+}
