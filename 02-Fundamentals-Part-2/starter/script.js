@@ -132,3 +132,44 @@ const total = [(bills[0] + tips[0]), (bills[1] + tips[1]), (bills[2] + tips[2])]
 
 console.log("The total bills are " +   total);
 
+//Creating Objects
+const me = {
+    firstName: "Afif",
+    lastName :"Haque",
+    birthYear: 2004,
+    job: "Student",
+    friends: ["Ifte", "Alvin", "Ansh", "Kevin"],
+    calcAge: function(birthYear){
+        return 2023 - birthYear;
+    } 
+};
+console.log(me);
+//dot notation
+console.log(me.lastName);
+//bracket notation
+console.log(me['lastName']);
+
+const nameKey = 'Name';
+console.log(me['first' + nameKey]);
+console.log(me['last' + nameKey]);
+
+//Use bracket notation in a case like this
+const interestedIn= prompt("What do you want to know about me? Choose between firstName, lastName, birthYear, job, and friends");
+console.log(me[interestedIn]);
+//side note: if a value returns undefined it is considered as flase else true
+if (me[interestedIn])
+{
+    console.log(me[interestedIn]);
+}
+else{
+    console.log("Wrong request Choose between firstName, lastName, birthYear, job, and friends");
+}
+//assigning new elements to the 
+me.location = "US";
+me["twitter"] = "@afif_polo";
+me.driverLicense = false;
+console.log(me);
+
+console.log(me.firstName + " has " + me.friends.length + " friends, and his best friend is called " + me.friends[0]);
+
+console.log(me.calcAge(2004));
