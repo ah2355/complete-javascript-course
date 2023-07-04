@@ -226,3 +226,100 @@ if (mark.bmi > john.bmi) {
 } else if (john.bmi > mark.bmi) {
   console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`)
 }
+
+//for loop keeps running while condition is true
+// for(let rep=1; rep<=10; rep++){
+//     console.log("Lifting weights rep " + rep );
+// }
+
+
+const afif2 = [firstName, 'Haque', 2023 - 2004, friends, true];
+
+const emptyArr = [];
+
+for(let i=0; i < afif2.length; i++)
+{
+    console.log(afif2[i], typeof afif2[i]);
+    // emptyArr[i] = typeof afif2[i];
+    emptyArr.push(typeof afif2[i]);
+}
+
+console.log(emptyArr);
+
+const years= [2004, 2005, 2006, 2011, 2001];
+const ages = [];
+for(let i=0; i< years.length; i++)
+{
+    ages.push(2023 - years[i]);
+}
+
+console.log(ages);
+
+//continue and break statement
+
+for(let i=0; i < afif2.length; i++)
+{
+    //If the type is string its going to print line 264
+    if(typeof afif2[i] !== 'string')      continue;
+    console.log(afif2[i], typeof afif2[i]);
+
+}
+
+
+for(let i=0; i<afif2.length;i++)
+{
+    //If the type is number its going to break and print line 274 otherwise the whole loop is going to break
+    if(typeof afif2[i] ==='number')
+    break;
+    console.log(afif2[i], typeof afif2[i]);
+}
+//Looping arrays backward
+for(let i = afif2.length-1; i>=0; i--)
+{
+    console.log(i, afif2[i]);
+}
+
+for(let i=1; i<4;i++)
+{
+    console.log(`------- Starting exercise4 ${i}`);
+    for(let j=1;j <6;j++)
+    {
+        console.log(`----- Lifting Weight Repetion ${j}`);
+    }
+}
+
+// for(let rep=1; rep<=10; rep++){
+//     console.log("Lifting weights rep " + rep );
+// }
+
+let rep = 0;
+while(rep<=10)
+{
+    console.log(`'While loop:' Lifting weights rep ${rep}`);
+    rep++;
+}
+
+let dice = Math.trunc((Math.random()* 6)) + 1;
+while(dice!==6)
+{
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc((Math.random()* 6)) + 1;
+    (dice ===6) ?  console.log("loop is about to end") : console.log("nvm");
+}
+
+//Coding Challenge #4
+const calcTip1 = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+  }
+
+  const bills1 = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+  const tips1 = [];
+  
+  const totals1 = [];
+
+for(let i=0; i < bills.length;i++)
+{
+    tips1.push(calcTip1(bills[i]));
+    totals1.push(bills[i] + tips1[i]);
+}
