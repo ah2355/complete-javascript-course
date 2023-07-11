@@ -58,3 +58,17 @@ const measureKelvin = function () {
   return kelvin;
 };
 console.log(measureKelvin());
+
+const tempData1 = [17, 21, 23];
+const tempData2 = [17, 5, -5, 0, 4];
+
+const printForecast = function (arr) {
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
+    str += `... ${arr[i]}°C in ${i + 1} days`;
+  }
+  console.log(str + "...");
+};
+
+printForecast(tempData1);
+printForecast(tempData2);
