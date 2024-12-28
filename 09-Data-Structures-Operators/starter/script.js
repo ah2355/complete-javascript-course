@@ -30,6 +30,12 @@ const restaurant = {
   //Function
   order: function(starterIndex, mainIndex){
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderPizza: function(mainIngredient, ...otherIngredients){
+    console.log(mainIngredient);
+    //Making an array look like integers
+    console.log(...otherIngredients);
   }
 };
 
@@ -70,5 +76,23 @@ console.log(newArr);
 console.log(...newArr);
 
 //Rest Operator
+//Always need to be the last element
 const [a1, b1, ...others] = [1, 2, 3, 4, 5];
 console.log(a1, b1, others);
+//2) Functions
+const add = function(...numbers){
+let sum = 0;
+for(let i =0; i < numbers.length; i++){
+  sum += numbers[i];
+}
+console.log(sum);
+};
+
+add(2, 3, 4, 5);
+add(2, 3, 4, 5, 6, 7, 8);
+add(2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+const no = [23, 5, 7];
+add(...no);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
