@@ -57,4 +57,18 @@ const [starter, mainCourse] = restaurant.order(2,0);
 console.log(starter, mainCourse);
 
 //Destructing Objects
+const {name, openingHours, categories} = restaurant;
+console.log(name, openingHours, categories);
 
+//Changing the name of the variables
+const {name: resqaurantName, openingHours: hours, categories: tags} = restaurant;
+console.log(resqaurantName, hours, tags);
+
+//Spread Operator 
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+console.log(...newArr);
+
+//Rest Operator
+const [a1, b1, ...others] = [1, 2, 3, 4, 5];
+console.log(a1, b1, others);
