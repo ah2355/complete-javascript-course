@@ -28,11 +28,11 @@ const restaurant = {
   },
 
   //Function
-  order: function(starterIndex, mainIndex){
+  order (starterIndex, mainIndex){
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderPizza: function(mainIngredient, ...otherIngredients){
+  orderPizza (mainIngredient, ...otherIngredients){
     console.log(mainIngredient);
     //Making an array look like integers
     console.log(...otherIngredients);
@@ -195,3 +195,15 @@ const printGoals = function(...players){
 // WITHOUT using an if/else statement or the ternary operator.
 
 team1 < team2 && console.log('Team 1 is more likely to win'); 
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for(const item of menu){
+  console.log(item);
+}
+
+for(const [i, el] of menu.entries()){
+  console.log(`${i + 1} : ${el}`);
+}
+
+console.log([...menu.entries()]);
