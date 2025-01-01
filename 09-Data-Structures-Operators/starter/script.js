@@ -196,6 +196,7 @@ const printGoals = function(...players){
 
 team1 < team2 && console.log('Team 1 is more likely to win'); 
 
+//Loopig Arrays: The for-of Loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
 for(const item of menu){
@@ -207,3 +208,61 @@ for(const [i, el] of menu.entries()){
 }
 
 console.log([...menu.entries()]);
+
+//Optional Chaining
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for(const day of days){
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+//Methods
+
+console.log(restaurant.order?.(0,1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0,1) ?? 'Method does not exist');
+
+//Arrays
+const users = [{
+  name : 
+'Robert',
+  email : 'roberto1417@hotmail.com'
+}];
+
+//if the user array has a user in first index then print the name
+//or print 'User array empty'
+console.log(users[0]?.name ?? 'User array empty');
+
+if(users.length > 0){
+  console.log(users[0].name);
+}else{
+  console.log('User array empty');
+}
+
+//Looping Objects : Object Keys, Values, and Entries
+
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for(const day of properties){
+  openStr += `${day}, `;
+}
+
+console.log(openStr);
+
+//Property Values
+ const values = Object.values(openingHours);
+ console.log(values);
+
+//Entire Entries
+ const entries = Object.entries(openingHours)
+ console.log(entries);
+
+ //[key, value] but we are destructuring it to be [day, {open, close}]
+ for(const [key, {open, close}] of entries){
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+ }
+
+ //Coding Challenge #2
