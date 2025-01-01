@@ -266,3 +266,18 @@ console.log(openStr);
  }
 
  //Coding Challenge #2
+ for(const [i, player] of game.scored.entries()){
+   console.log(`Goal ${i + 1}: ${player}`);
+ }
+
+ let avg = 0;
+ for(const odd of Object.values(game.odds)){
+   avg += odd;
+ }
+  avg /= Object.values(game.odds).length;
+  console.log(avg);
+
+  for (const [team, odd] of Object.entries(game.odds)){
+    const teamStr = team === 'x' ? 'draw' : `vicotry ${game[team]}`;
+    console.log(`Odd of ${odd}`);
+  }
