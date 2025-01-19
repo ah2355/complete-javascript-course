@@ -281,3 +281,14 @@ console.log(openStr);
     const teamStr = team === 'x' ? 'draw' : `vicotry ${game[team]}`;
     console.log(`Odd of ${odd}`);
   }
+
+  const orderSet  = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
+  console.log(orderSet);
+  console.log(orderSet.size);
+  console.log(orderSet.has('Pizza'));
+  console.log(orderSet.add('Garlic Bread'));
+  console.log(orderSet.delete('Risotto'));
+  //orderSet.clear();
+  for(const order of orderSet){
+    console.log(order);
+  }
