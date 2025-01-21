@@ -292,3 +292,30 @@ console.log(openStr);
   for(const order of orderSet){
     console.log(order);
   }
+
+  const italianFoods = new Set([
+    'Pasta',
+    'gnocchi',
+    'pizza',
+    'risotto',
+    'olive oil',
+    'tomatoes',
+  ])
+
+  const mexicanFoods = new Set([
+    'torilla',
+    'tacos',
+    'enchiladas',
+    'guacamole',
+    'olive oil',
+    'tomatoes',
+  ]);
+
+  const commonFoods = italianFoods.intersection(mexicanFoods);
+  console.log('intersection: ' , commonFoods);
+  console.log(...commonFoods)
+
+  const italianMexicanFusion = italianFoods.union(mexicanFoods);
+
+  console.log('union: ', italianMexicanFusion);
+  console.log(...italianMexicanFusion);
