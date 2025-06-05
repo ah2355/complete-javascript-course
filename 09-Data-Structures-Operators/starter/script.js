@@ -282,6 +282,7 @@ console.log(openStr);
     console.log(`Odd of ${odd}`);
   }
 
+  //Sets
   const orderSet  = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
   console.log(orderSet);
   console.log(orderSet.size);
@@ -319,3 +320,129 @@ console.log(openStr);
 
   console.log('union: ', italianMexicanFusion);
   console.log(...italianMexicanFusion);
+
+//Maps
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+rest
+.set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+.set('open', 11)
+.set('close', 23)
+.set(true, 'We are open')
+.set(false, 'We are closed');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+
+const time = 8;
+
+console.log(rest.get(time > rest.get('open') && time < rest.get('close'))); 
+
+
+const question = new Map([
+  ['question', 
+  'What is the best programming language?'], 
+  ['options', [0 , 'JavaScript'], [1, 'Python'], [2, 'Rust'], [3, 'C++'], 
+  ['correct', 0], [true, 'Correct'], [false, 'Try again']]
+]);
+
+console.log(question);
+
+const airline = 'Spirit Airlines';
+const plane = 'A320neo';
+console.log(airline[0]);
+console.log(airline.length);
+console.log(airline.indexOf('i'));
+console.log(airline.lastIndexOf('i'));
+//Case sensitive
+console.log(airline.indexOf('Airlines'));
+
+console.log(airline.slice(0,6));
+console.log(airline.slice(7));
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+const checkMiddleSeat = function(seat) {
+  //B and E are middle seats
+  const s = seat.slice(seat.length-1);
+  if(s === 'B' || s === 'E'){
+    console.log('You got the middle seat');
+  } else{
+    console.log('You got lucky');  
+  }
+}
+
+checkMiddleSeat('11A');
+
+console.log(new String('Robert'));
+console.log(typeof new String('Robert'));
+console.log(typeof new String('Robert').slice(0, 6));
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const passenger = 'rObErt';
+const passLower = passenger.toLowerCase();
+const passCorrect = passLower[0].toUpperCase() + passLower.slice(1);
+console.log(passCorrect);
+
+const email = 'gg@gmail.com'
+const loginEmail = 'GG@GmAil.com \n';
+//Trim takes care of the spaces at the beginning and end
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+const priceGB = '388,97£';
+const priceUs = priceGB.replace(',', '.').replace('£', '$');
+console.log(priceUs);
+
+const announcement = 'All passengers come to boarding door 23. Boarding door 23';
+console.log(announcement.replaceAll('door', 'gate'));
+
+//Booleans
+const plane2 = 'Airbus A320neo';
+console.log(plane2.includes('A320'));
+console.log(plane2.includes('Boeing'));
+console.log(plane2.startsWith('Air'));
+
+if(plane2.startsWith('Airbus') && plane2.endsWith('neo')){
+  console.log('Part of the new Airbus family');
+}
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Antoine Griezmann'.split(' '));
+
+const [firstName, lastName] = 'Antoine Griezmann'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function(name){
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for(const n of names){
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('karim benzema');
+capitalizeName('robert lewandowski');
+
+const message = 'Go to gate 40!';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+
+const maskCreditCard = function(number){
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(1234567890123456));
