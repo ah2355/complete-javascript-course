@@ -24,7 +24,7 @@ const high5 = function(){
 document.body.addEventListener('click', high5);
 ['Roy', 'Keane', 'Julio'].forEach(high5);
 
-
+//Function Returning Function
 const greet = function(greeting){
     return function(name){
         console.log(`${greeting}, ${name}`);
@@ -34,6 +34,11 @@ const greet = function(greeting){
 const greeter = greet('Hey');
 greeter('Liam');
 greeter('MJ');
+
+const greetAr = greeting => name => {
+    console.log(`${greeting}, ${name}`);
+}
+greetAr('Hi')('Kiki');
 
 const lufth = {
     airline: 'Lufthansa',
